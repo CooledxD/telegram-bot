@@ -1,0 +1,4 @@
+{
+  "ext": "js",
+  "exec": "eslint . && node src/index"
+}
