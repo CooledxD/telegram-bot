@@ -17,12 +17,12 @@ const textOverlay = async data => {
     img.print(font_148, 80, 85, `${Math.floor(data.main.temp)}°`)
 
     // weather main
-    img.print(font_84, 230, 100, `${data.weather[0].description}`)
+    img.print(font_84, 350, 100, `${data.weather[0].description}`)
 
     // temp feels like
     img.print(
       font_84,
-      230,
+      350,
       180,
       `feels like ${Math.floor(data.main.feels_like)}°`
     )
@@ -34,7 +34,7 @@ const textOverlay = async data => {
     img.print(font_84, 80, 400, `humidity ${data.main.humidity}%`)
 
     // pressure
-    img.print(font_84, 80, 500, `pressure ${data.main.pressure * 0.750064}mmHg`)
+    img.print(font_84, 80, 500, `pressure ${Math.floor(data.main.pressure * 0.750064)}mmHg`)
 
     return await img.getBufferAsync(Jimp.MIME_PNG)
   } catch (error) {
