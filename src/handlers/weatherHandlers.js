@@ -12,7 +12,6 @@ const sceneHandler = bot => {
     const chatId = msg.chat.id
 
     try {
-      const { language_code } = msg.from
       const { text } = msg
 
       const strValidated = /^[\p{L}]+$/iu.test(text)
@@ -23,7 +22,6 @@ const sceneHandler = bot => {
           {
             params: {
               q: text,
-              lang: language_code,
               units: 'metric',
               appid: process.env.WEATHER_KEY,
             },
@@ -78,7 +76,6 @@ export const weatherLocation = bot => {
   return async msg => {
     try {
       const chatId = msg.chat.id
-      const { language_code } = msg.from
       const { latitude } = msg.location
       const { longitude } = msg.location
       const { message_id } = msg
@@ -89,7 +86,6 @@ export const weatherLocation = bot => {
           params: {
             lat: latitude,
             lon: longitude,
-            lang: language_code,
             units: 'metric',
             appid: process.env.WEATHER_KEY,
           },
