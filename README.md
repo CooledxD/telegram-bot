@@ -36,6 +36,12 @@ project/
    |--models/
 ```
 
+## 📝 Env
+
+* TOKEN - telegram bot token
+* DB_URL - database url
+* WEATHER_KEY - openweathermap api key
+
 ## P.S
 
 In the future it will be rewritten on telegraf.js or grammY.
